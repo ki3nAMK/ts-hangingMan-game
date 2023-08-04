@@ -1,0 +1,14 @@
+.keyboard{
+    margin: 20px ;
+    width: 80% ;
+    .keyboardButton{
+        width: 75px ;
+        height: 75px ;
+        background-color: white ; 
+        display: inline;
+        margin:10px ;
+        font-size: 40px ;
+        font-family:'Segoe UI' ;
+        text-align: center ;
+    }
+}

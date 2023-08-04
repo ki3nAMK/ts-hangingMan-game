@@ -1,0 +1,69 @@
+@mixin stickVersion($rotate,$width,$height) {
+    @if ($rotate==false) {
+        width: $width ;
+        height: $height;
+    } @else {
+        width: $height ;
+        height: $width ;
+    }
+    background-color: black ;
+}
+@mixin limbs($rotate,$top,$left) {
+    position: absolute ;
+    top:$top ;
+    transform: rotate($rotate);
+    width: 10px ; 
+    height: 60px;
+    background-color: black ;
+    left:$left ;
+}
+.theHangingMan {
+    width: 300px ;
+    position: relative ;
+    .theHanging{
+        position: relative ;
+        .stick1{
+            @include stickVersion(false,150px,10px) ;
+        }
+        .stick2{
+            margin-left: 75px ; 
+            @include stickVersion(true ,300px,10px) ;
+        }
+        .stick3{
+            @include stickVersion(false,130px,10px) ;
+            margin-left: 75px ;
+        }
+        .stick4{
+            @include stickVersion(true,50px,10px) ;
+            position: absolute ;
+            margin-left: 195px ;
+        }
+    }
+    .man{
+        position: absolute ;
+        margin-left: 165px ;
+        top: 50px ; 
+        .head{
+            border: 10px solid black ;
+            width: 50px ; 
+            height: 50px ;
+            border-radius: 50%;
+        }
+        .body{
+            @include stickVersion(true,90px,10px) ;
+            margin-left:30px ;
+        }
+        .leftHand{
+            @include limbs(45deg,60px,5px)
+        }
+        .rightHand{
+            @include limbs(135deg,60px,55px)
+        }
+        .leftLeg{
+            @include limbs(45deg,150px,8px)
+        }
+        .rightLeg{
+            @include limbs(135deg,150px,50px)
+        }
+    }
+}

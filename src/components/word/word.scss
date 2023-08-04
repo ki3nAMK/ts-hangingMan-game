@@ -1,0 +1,27 @@
+.word{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    .content{
+        width: 70px ;
+        height: 106.4px ;
+        font-size: 80px;
+        font-weight: bold ;
+        font-family:'Segoe UI';
+        position: relative;
+        margin: 20px ; 
+        text-align: center;
+    }
+    .content::after{
+        content: '' ;
+        width: 70px ;
+        height: 10px ;
+        position: absolute;
+        background-color: black ;
+        left : 0 ; 
+        bottom: 0 ; 
+    }
+}
+.font-color-red {
+    color: red ;
+}
