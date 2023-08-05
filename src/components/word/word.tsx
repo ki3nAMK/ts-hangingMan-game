@@ -44,7 +44,7 @@ function Word(props:contentRecive) {
         }
     },[countdown])
     useEffect( () => {
-        if( !word.includes(' ') ) props.setWinLoose(true) ;
+        if( !word.includes(' ') && countdown !== 6) props.setWinLoose(true) ;
     },[word])
     const checkLenWord = (content:string) => {
         let arr:string[] = content.split('') ;
